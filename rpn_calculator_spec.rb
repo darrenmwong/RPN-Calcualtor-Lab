@@ -53,9 +53,5 @@ describe RPNCalculator do
     rpn_string = "-41 -65 + -25 48 ^ ^ -5 53 -99 90 + 11 ^ -70 * + -96 75"
     rpn_list = RPNCalculator.parse(rpn_string)
     expect(RPNCalculator.evaluate(rpn_list)).to eq(75)
-
-    # rpn_string = "-79 -78 ^ 99 19 + -74 / + -54 -55 57 / 81 ^ / -55 44 + -93 29 / + + * -8 17 35 + + 69 -53 * 12 ^ -40 / * + -21 15 + -82 + -70 62 + + -100 + 66 + -54 -87 + ^ 32 -25 + + 91 81 -5 -28 + - -91 + / -8 -73 71 * + + * ^"
-    # rpn_list = RPNCalculator.parse(rpn_string)
-    # expect(RPNCalculator.evaluate(rpn_list)).to eq(75)
   end
 end
