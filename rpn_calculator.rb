@@ -17,14 +17,19 @@ class RPNCalculator
       if self.is_number(x)
         new_stack.push(x)
       elsif self.is_operation(x)
-        operator = x
+        if x == '^'
+          operator = '**'
+        else
+          operator = x
+         end
         value = new_stack.pop
         value2 = new_stack.pop
         return_value = value2.to_f.public_send(operator, value.to_f)
         new_stack.push(return_value)
+
       end
     end
-    return new_stack.pop
+    return new_stack.pop.to_f
   end
 
   def self.is_operation(operation)
